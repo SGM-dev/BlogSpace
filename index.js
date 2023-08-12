@@ -12,3 +12,14 @@ fetch("https://apis.scrimba.com/jsonplaceholder/posts")
     }
     document.getElementById("blog-list").innerHTML = html;
   });
+
+document.getElementById("new-post").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const postTitle = document.getElementById("post-title");
+  const postBody = document.getElementById("post-body");
+  const data = {
+    title: postTitle.value,
+    body: postBody.value,
+  };
+  console.log(data);
+});
