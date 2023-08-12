@@ -24,13 +24,17 @@ nav > h3 {
 
 form {
   padding: 60px 10px 10px;
+  display: grid;
+  background-color: lightblue;
 }
 
-/* 
-Challenge: our form is hideous! Make it less hideous :P
+input#post-title,
+textarea#post-body {
+  margin-bottom: 10px;
+}
 
-* Lay out the elements in a nicer way, maybe vertically. 
-  (CSS Grid or Flexbox should make this easy)
-* Add some background color to separate it from the posts
-* Style the button however you'd like.
-*/
+button {
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
