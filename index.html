@@ -3,20 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BlogSpace</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Karla:wght@200;400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/index.css" />
+    <link rel="stylesheet" href="index.css" />
+    <title></title>
   </head>
   <body>
-    <nav class="navbar">
-      <h2 class="logo">BlogSpace</h2>
+    <nav>
+      <h3>BlogSpace</h3>
     </nav>
-    <main id="blog-section"></main>
-    <script src="/index.js"></script>
+    <form>
+      <label for="post-title">Title:</label>
+      <input id="post-title" type="text" />
+      <label for="post-body">Body:</label>
+      <textarea id="post-body"></textarea>
+      <button>Post</button>
+    </form>
+    <div id="blog-list"></div>
+    <script src="index.js"></script>
   </body>
 </html>
