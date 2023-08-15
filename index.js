@@ -13,13 +13,13 @@ fetch("https://apis.scrimba.com/jsonplaceholder/posts")
     document.getElementById("blog-list").innerHTML = html;
   });
 
-document.getElementById("new-post").addEventListener("submit", (e) => {
+document.getElementById("new-post").addEventListener("submit", function (e) {
   e.preventDefault();
-  const postTitle = document.getElementById("post-title");
-  const postBody = document.getElementById("post-body");
+  const postTitle = document.getElementById("post-title").value;
+  const postBody = document.getElementById("post-body").value;
   const data = {
-    title: postTitle.value,
-    body: postBody.value,
+    title: postTitle,
+    body: postBody,
   };
 
   const options = {
@@ -32,5 +32,15 @@ document.getElementById("new-post").addEventListener("submit", (e) => {
 
   fetch("https://apis.scrimba.com/jsonplaceholder/posts", options)
     .then((res) => res.json())
-    .then((data) => console.log(data));
+    .then((data) => {
+      document.getElementById("post-title").value = ``;
+      document.getElementById("post-body").value = "";
+      console.log(data);
+
+      document.getElementById("blog-list").innerHTML = `
+      <h3>${data.title}</h3>
+      <p>${data.body}</p>
+      <hr />
+      ${document.getElementById("blog-list").innerHTML}`;
+    });
 });
